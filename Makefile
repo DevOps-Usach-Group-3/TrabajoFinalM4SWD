@@ -21,5 +21,5 @@ test-linux:
 
 .PHONY: test-mac
 test-mac: up
-	@cd back/ && mvn test -Dtest="diezTests" -Dso=mac
+	@cd back/ && mvn test -Dtest="diezTests, DevopsApplicationTests" -Dso=mac
 
