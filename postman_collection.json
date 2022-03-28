@@ -1,0 +1,190 @@
+{
+	"info": {
+		"_postman_id": "989da3eb-962b-412e-9edd-e46bc0cb1ec8",
+		"name": "Dxc",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Dxc",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Diez x Ciento\", () => {",
+							"  const responseJson = pm.response.json();",
+							"  pm.expect(responseJson.ahorro).to.eql(5000000);",
+							"  pm.expect(responseJson.dxc).to.eql(1000000);",
+							"});",
+							"",
+							"pm.test(\"Codigo de estado 200\", () => {",
+							"  pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 4000ms\", () => {",
+							"  pm.expect(pm.response.responseTime).to.be.below(300000);",
+							"});",
+							"",
+							"pm.test(\"Content-Type header is application/json\", () => {",
+							"  pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://www.christiancordova.com:8090/rest/msdxc/dxc?ahorro=5000000&sueldo=1000000",
+					"protocol": "http",
+					"host": [
+						"www",
+						"christiancordova",
+						"com"
+					],
+					"port": "8090",
+					"path": [
+						"rest",
+						"msdxc",
+						"dxc"
+					],
+					"query": [
+						{
+							"key": "ahorro",
+							"value": "5000000"
+						},
+						{
+							"key": "sueldo",
+							"value": "1000000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Impuesto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Diez x Ciento\", () => {",
+							"  const responseJson = pm.response.json();",
+							"  pm.expect(responseJson.valor).to.eql(0);",
+							"  pm.expect(responseJson.descripcion).to.eql('impuesto');",
+							"});",
+							"",
+							"pm.test(\"Codigo de estado 200\", () => {",
+							"  pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 4000ms\", () => {",
+							"  pm.expect(pm.response.responseTime).to.be.below(300000);",
+							"});",
+							"",
+							"pm.test(\"Content-Type header is application/json\", () => {",
+							"  pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://www.christiancordova.com:8090/rest/msdxc/impuesto?ahorro=5000000&sueldo=1000000",
+					"protocol": "http",
+					"host": [
+						"www",
+						"christiancordova",
+						"com"
+					],
+					"port": "8090",
+					"path": [
+						"rest",
+						"msdxc",
+						"impuesto"
+					],
+					"query": [
+						{
+							"key": "ahorro",
+							"value": "5000000"
+						},
+						{
+							"key": "sueldo",
+							"value": "1000000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Saldo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Diez x Ciento\", () => {",
+							"  const responseJson = pm.response.json();",
+							" // pm.expect(responseJson.ahorro).to.eql(5000000);",
+							" // pm.expect(responseJson.dxc).to.eql(1000000);",
+							"});",
+							"",
+							"pm.test(\"Codigo de estado 200\", () => {",
+							"  pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 4000ms\", () => {",
+							"  pm.expect(pm.response.responseTime).to.be.below(300000);",
+							"});",
+							"",
+							"pm.test(\"Content-Type header is application/json\", () => {",
+							"  pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://www.christiancordova.com:8090/rest/msdxc/saldo?sueldo=1500001&ahorro=3000000",
+					"protocol": "http",
+					"host": [
+						"www",
+						"christiancordova",
+						"com"
+					],
+					"port": "8090",
+					"path": [
+						"rest",
+						"msdxc",
+						"saldo"
+					],
+					"query": [
+						{
+							"key": "sueldo",
+							"value": "1500001"
+						},
+						{
+							"key": "ahorro",
+							"value": "3000000"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
