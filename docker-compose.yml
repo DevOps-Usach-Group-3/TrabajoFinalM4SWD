@@ -7,6 +7,8 @@ services:
       - "8000:8000"
       links:
         - back
+      volumes:
+        - ./front:/code
 
     back:
       image: spring-boot
