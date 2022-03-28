@@ -19,6 +19,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.support.ui.Select;
 import java.util.*;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -74,5 +75,51 @@ public class diezTests {
 
     String value = driver.findElement(By.cssSelector(".valor")).getText();
     assertEquals("3000000", value);
+  }
+
+    @Test
+    public void saldo() {
+    driver.get("http://localhost:8000/");
+    driver.manage().window().setSize(new Dimension(1920, 1080));
+    driver.findElement(By.cssSelector("body")).click();
+    driver.findElement(By.linkText("Retiro 10%")).click();
+    driver.findElement(By.id("id_ahorro")).click();
+    driver.findElement(By.id("id_ahorro")).sendKeys("30000000");
+    driver.findElement(By.id("id_sueldo")).sendKeys("10000000");
+    
+    Select drpTipo = new Select(driver.findElement(By.id("id_tipo")));
+    drpTipo.selectByValue("saldo");
+
+    driver.findElement(By.cssSelector("div > div:nth-child(1)")).click();
+    driver.findElement(By.cssSelector("input:nth-child(1)")).click();
+    driver.findElement(By.cssSelector("div > div:nth-child(1)")).click();
+
+    driver.manage().timeouts().implicitlyWait(4,TimeUnit.SECONDS);
+
+    String value = driver.findElement(By.cssSelector(".valor")).getText();
+    assertEquals("27000000", value);
+  }
+
+  @Test
+  public void impuesto() {
+    driver.get("http://localhost:8000/");
+    driver.manage().window().setSize(new Dimension(1920, 1080));
+    driver.findElement(By.cssSelector("body")).click();
+    driver.findElement(By.linkText("Retiro 10%")).click();
+    driver.findElement(By.id("id_ahorro")).click();
+    driver.findElement(By.id("id_ahorro")).sendKeys("30000000");
+    driver.findElement(By.id("id_sueldo")).sendKeys("10000000");
+    
+    Select drpTipo = new Select(driver.findElement(By.id("id_tipo")));
+    drpTipo.selectByValue("impuesto");
+
+    driver.findElement(By.cssSelector("div > div:nth-child(1)")).click();
+    driver.findElement(By.cssSelector("input:nth-child(1)")).click();
+    driver.findElement(By.cssSelector("div > div:nth-child(1)")).click();
+
+    driver.manage().timeouts().implicitlyWait(4,TimeUnit.SECONDS);
+
+    String value = driver.findElement(By.cssSelector(".valor")).getText();
+    assertEquals("1050000", value);
   }
 }
