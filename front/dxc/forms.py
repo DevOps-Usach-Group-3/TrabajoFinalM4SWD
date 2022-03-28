@@ -2,7 +2,7 @@ from django import forms
 
 
 INPUT_CHOICES =(
-    ("retiro", "Retiro 10%"),
+    ("10x100", "Retiro 10%"),
     ("saldo", "Saldo Restante"),
     ("impuesto", "Impuesto")
 )
