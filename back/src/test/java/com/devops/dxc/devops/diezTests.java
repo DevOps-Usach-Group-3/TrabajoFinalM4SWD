@@ -23,6 +23,8 @@ import java.util.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import org.springframework.boot.test.context.SpringBootTest;
+import java.util.concurrent.TimeUnit;
+
 
 @SpringBootTest
 public class diezTests {
@@ -67,5 +69,10 @@ public class diezTests {
     driver.findElement(By.cssSelector("div > div:nth-child(1)")).click();
     driver.findElement(By.cssSelector("input:nth-child(1)")).click();
     driver.findElement(By.cssSelector("div > div:nth-child(1)")).click();
+
+    driver.manage().timeouts().implicitlyWait(4,TimeUnit.SECONDS);
+
+    String value = driver.findElement(By.cssSelector(".valor")).getText();
+    assertEquals("3000000", value);
   }
 }
