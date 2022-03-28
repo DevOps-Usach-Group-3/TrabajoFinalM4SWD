@@ -9,7 +9,15 @@ pipeline {
             steps {
                 script {
                 sh "echo 'Ejecutar pruebas de Junit'"
-                sh "mvn test"
+               // sh "mvn test"
+                }
+            }
+        }    
+        stage("Paso 2: Probar con Newman"){
+            steps {
+                script {
+                sh "echo 'Ejecutar pruebas de Postman'"
+                sh "newman run postman_collection.json"
                 }
             }
         }    
