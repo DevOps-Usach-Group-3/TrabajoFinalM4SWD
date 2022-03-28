@@ -9,7 +9,7 @@ pipeline {
             steps {
                 script {
                 sh "echo 'Ejecutar pruebas de Junit'"
-               // sh "mvn test"
+                sh "mvn test"
                 }
             }
         }    
