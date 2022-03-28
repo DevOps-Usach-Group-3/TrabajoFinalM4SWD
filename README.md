@@ -5,11 +5,10 @@
 Este trabajo está desarrollado con Docker Compose. Para levantar el ambiente primero se sugiere descargar el repo de la siguiente forma:
 
 ```
-git clone https://github.com/DevOps-Usach-Group-3/TrabajoFinalM4SWD.git
+git clone https://github.com/DevOps-Usach-Group-3/TrabajoFinalM4SWD.git && cd TrabajoFinalM4SWD 
 ```
 
-Posteriormente construir las imágenes con:
-
+Posteriormente construir las imágenes (dentro de la carpeta TrabajoFinalM4SWD) con:
 
 ```
 make build
