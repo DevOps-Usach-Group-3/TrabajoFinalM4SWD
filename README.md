@@ -2,7 +2,14 @@
 
 ### Levantar ambiente
 
-Este trabajo está desarrollado con Docker Compose. Para levantar el ambiente primero hay que construir las imágenes con:
+Este trabajo está desarrollado con Docker Compose. Para levantar el ambiente primero se sugiere descargar el repo de la siguiente forma:
+
+```
+git clone https://github.com/DevOps-Usach-Group-3/TrabajoFinalM4SWD.git
+```
+
+Posteriormente construir las imágenes con:
+
 
 ```
 make build
