@@ -1,0 +1,14 @@
+# Getting Started
+
+### ejecutar pruebas unitarias
+Maven : mvn test -e
+
+### ejecutar y publicar
+mvn build
+nohup java -jar -Dserver.port=8090 target/devops-0.0.1-SNAPSHOT.jar >/home/christian/Documentos/Diplomado/Git/TrabajoFinalM4SWD/log.txt &
+
+### Endpoint
+[saldo] http://URL:8090/rest/msdxc/saldo?sueldo=1500001&ahorro=3000000
+[10xciento] http://URL:8090/rest/msdxc/10x100?sueldo=1500001&ahorro=3000000
+[impuesto] http://URL:8090/rest/msdxc/impuesto?sueldo=1500001&ahorro=3000000
+[General] http://URL:8090/rest/msdxc/dxc?sueldo=1500001&ahorro=3000000

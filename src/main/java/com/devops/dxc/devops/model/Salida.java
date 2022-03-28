@@ -11,7 +11,7 @@ public class Salida implements Serializable {
 
     public Salida(int ahorro, int sueldo, String salida) {
 
-        this.descripcion = salida;
+            this.descripcion = salida;
         this.valor = evalua(ahorro, sueldo, salida);
 
     }
