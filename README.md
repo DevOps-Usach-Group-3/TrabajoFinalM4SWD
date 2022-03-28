@@ -27,7 +27,7 @@ Por último ir a http://localhost:8000/retiro para probar la app.
 
 ### Testear
 
-Para testear es necesario primero tener corriendo los contenedores con `make up`. Una vez teniendo eso, y dependiendo el sistema operativo se pueden correr los tests unitarios y con Selenium de la forma:
+Para testear es necesario primero tener corriendo los contenedores corriendo con `make up`.  Dependiendo el sistema operativo se pueden correr los tests unitarios y con Selenium según:
 
 ##### Windows
 
